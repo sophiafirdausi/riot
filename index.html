@@ -7,18 +7,15 @@
     <style>
         body {
             font-family: "Courier New", Courier, monospace;
-            background-color: #fffde7; 
+            background-color: #fffde7; /* Warm cream/yellow */
             color: #000000;
             margin: 40px;
             font-size: 16px; 
             line-height: 1.2;
         }
 
-        /* Hide all pages by default */
+        /* All pages are hidden by default */
         .page { display: none; }
-
-        /* Show the home page initially */
-        #home { display: block; }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -45,4 +42,12 @@
 
         .mag-link { color: black; text-decoration: underline; display: block; margin-bottom: 15px; text-transform: lowercase; }
 
-        table { width: 100%; border-collapse: collapse
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; font-weight: normal; text-transform: lowercase; }
+
+        .back-btn { display: block; margin-top: 50px; text-decoration: none; font-size: 14px; color: #666; cursor: pointer; border: none; background: none; padding: 0; font-family: inherit; }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="page" style="display: block;">
