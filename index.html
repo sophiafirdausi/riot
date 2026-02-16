@@ -16,6 +16,8 @@
 
         /* All pages are hidden by default */
         .page { display: none; }
+        /* Show the active page */
+        .page.active { display: block; }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -40,4 +42,43 @@
         .caps-header { text-transform: uppercase; text-decoration: underline; display: inline-block; margin-bottom: 5px; }
         .vent-subtext { margin-bottom: 20px; display: block; text-transform: lowercase; }
 
-        .mag-link { color
+        .mag-link { color: #000; text-decoration: underline; }
+        
+        .back-btn { margin-top: 40px; display: block; cursor: pointer; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="page active">
+        <h1>riot</h1>
+        <div class="projects-grid">
+            <div class="box" onclick="showPage('research')">research</div>
+            <div class="box" onclick="showPage('sophia')">sophia firdausi</div>
+            </div>
+    </div>
+
+    <div id="research" class="page">
+        <h2>research</h2>
+        <p>Your research content goes here...</p>
+        <span class="back-btn" onclick="showPage('home')">back</span>
+    </div>
+
+    <div id="sophia" class="page">
+        <h2>sophia firdausi</h2>
+        <p>This is the new page for Sophia Firdausi.</p>
+        <span class="back-btn" onclick="showPage('home')">back</span>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
