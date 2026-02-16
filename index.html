@@ -50,7 +50,7 @@
         }
         .box:hover { background-color: #000; color: #fff; }
 
-        .advocate-link { text-decoration: underline; display: block; margin-bottom: 5px; text-transform: lowercase; }
+        .underlined-text { text-decoration: underline; display: block; margin-bottom: 5px; text-transform: lowercase; }
 
         .caps-header { text-transform: uppercase; text-decoration: underline; display: inline-block; margin-bottom: 5px; }
         .vent-subtext { margin-bottom: 20px; display: block; text-transform: lowercase; }
@@ -89,12 +89,14 @@
         <h2>access</h2>
         <div style="margin-top: 20px;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8jdPYEERwqriVeqXE6kc8GyuHVNVJze4cl3pKHMfva3jWw/viewform?usp=sharing&ouid=109260034631473801616" target="_blank" class="mag-link">get_media_passes</a>
+            <div class="underlined-text">jobs</div>
         </div>
         <button class="back-btn" onclick="showPage('home')">← back</button>
     </div>
 
     <div id="advocate-page" class="page">
-        <div class="advocate-link">blog</div>
+        <div class="underlined-text">blog</div>
+        <div class="underlined-text">research</div>
         <button class="back-btn" onclick="showPage('home')">← back</button>
     </div>
 
@@ -105,14 +107,4 @@
         <table>
             <tr>
                 <th>name</th>
-                <th>date</th>
-                <th>location</th>
-            </tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-        </table>
-        <button class="back-btn" onclick="showPage('create-page')">← back</button>
-    </div>
-
-</body>
-</html>
+                <th>
