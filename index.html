@@ -42,4 +42,47 @@
         .mag-link { color: black; text-decoration: underline; display: block; margin-bottom: 15px; text-transform: lowercase; }
 
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid black; padding: 1
+        th, td { border: 1px solid black; padding: 10px; text-align: left; font-weight: normal; text-transform: lowercase; }
+
+        .back-btn { display: block; margin-top: 50px; text-decoration: none; font-size: 14px; color: #666; cursor: pointer; border: none; background: none; padding: 0; font-family: inherit; }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="page" style="display: block;">
+        <h1>riot</h1>
+        <h2>projects</h2>
+        <div class="projects-grid">
+            <button type="button" class="box" onclick="goTo('create-page')">create</button>
+            <button type="button" class="box" onclick="goTo('access-page')">access</button>
+            <button type="button" class="box" onclick="goTo('advocate-page')">advocate</button>
+        </div>
+    </div>
+
+    <div id="create-page" class="page">
+        <span class="mag-link" style="cursor: pointer;">blog</span>
+        <a href="https://www.instagram.com/synesthesia.mag/" target="_blank" class="mag-link">synesthesia</a>
+        <a href="https://riot-productions.com/" target="_blank" class="mag-link">riot magazine</a>
+        
+        <div class="projects-grid">
+            <button type="button" class="box" onclick="goTo('vent-page')">A_VENT_SPACE</button>
+        </div>
+        <button type="button" class="back-btn" onclick="goTo('home')">← back</button>
+    </div>
+
+    <div id="access-page" class="page">
+        <h2>access</h2>
+        <div style="margin-top: 20px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8jdPYEERwqriVeqXE6kc8GyuHVNVJze4cl3pKHMfva3jWw/viewform?usp=sharing" target="_blank" class="mag-link">get_media_passes</a>
+            <div class="underlined-text" onclick="goTo('jobs-page')">jobs</div>
+        </div>
+        <button type="button" class="back-btn" onclick="goTo('home')">← back</button>
+    </div>
+
+    <div id="jobs-page" class="page">
+        <div class="underlined-text">opportunities</div>
+        <div class="underlined-text">past opportunities</div>
+        <button type="button" class="back-btn" onclick="goTo('access-page')">← back</button>
+    </div>
+
+    <div id
