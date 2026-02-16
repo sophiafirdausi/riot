@@ -14,9 +14,8 @@
             line-height: 1.2;
         }
 
-        /* Essential for navigation */
+        /* All pages are hidden by default */
         .page { display: none; }
-        .active { display: block !important; }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -51,7 +50,7 @@
 </head>
 <body>
 
-    <div id="home" class="page active">
+    <div id="home" class="page" style="display: block;">
         <h1>riot</h1>
         <h2>projects</h2>
         <div class="projects-grid">
@@ -74,4 +73,61 @@
     <div id="access-page" class="page">
         <h2>access</h2>
         <div style="margin-top: 20px;">
-            <a href="
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8jdPYEERwqriVeqXE6kc8GyuHVNVJze4cl3pKHMfva3jWw/viewform?usp=sharing&ouid=109260034631473801616" target="_blank" class="mag-link">get_media_passes</a>
+            <div class="underlined-text" onclick="showPage('jobs-page')">jobs</div>
+        </div>
+        <button type="button" class="back-btn" onclick="showPage('home')">← back</button>
+    </div>
+
+    <div id="jobs-page" class="page">
+        <div class="underlined-text">opportunities</div>
+        <div class="underlined-text">past opportunities</div>
+        <button type="button" class="back-btn" onclick="showPage('access-page')">← back</button>
+    </div>
+
+    <div id="advocate-page" class="page">
+        <div class="underlined-text">blog</div>
+        <div class="underlined-text">research</div>
+        <button type="button" class="back-btn" onclick="showPage('home')">← back</button>
+    </div>
+
+    <div id="vent-page" class="page">
+        <div class="caps-header">REAL SPACES TO VENT</div>
+        <div class="vent-subtext">art shows all mediums</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>date</th>
+                    <th>location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        <button type="button" class="back-btn" onclick="showPage('create-page')">← back</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+
+            // Show selected page
+            var target = document.getElementById(pageId);
+            if (target) {
+                target.style.display = 'block';
+            }
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
