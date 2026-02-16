@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: "Courier New", Courier, monospace;
+            /* Warm cream/yellow background */
             background-color: #fffde7; 
             color: #000000;
             margin: 40px;
@@ -14,13 +15,29 @@
             line-height: 1.2;
         }
 
-        /* All pages hidden by default */
-        .page { display: none; }
+        /* All pages are hidden by default */
+        .page { 
+            display: none; 
+        }
 
-        h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
-        h2 { text-decoration: underline; display: inline-block; }
+        h1, h2 { 
+            font-size: 16px; 
+            font-weight: normal; 
+            text-transform: lowercase; 
+            margin: 0 0 35px 0; 
+        }
+        
+        h2 { 
+            text-decoration: underline; 
+            display: inline-block; 
+        }
 
-        .projects-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 35px; }
+        .projects-grid { 
+            display: flex; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            margin-top: 35px; 
+        }
 
         .box { 
             border: 1px solid #000; 
@@ -33,16 +50,41 @@
             font-size: inherit;
             display: inline-block;
         }
-        .box:hover { background-color: #000; color: #fff; }
+        
+        .box:hover { 
+            background-color: #000; 
+            color: #fff; 
+        }
 
-        .underlined-text { text-decoration: underline; display: block; margin-bottom: 5px; text-transform: lowercase; cursor: pointer; }
+        .underlined-text { 
+            text-decoration: underline; 
+            display: block; 
+            margin-bottom: 5px; 
+            text-transform: lowercase; 
+            cursor: pointer; 
+        }
 
-        .caps-header { text-transform: uppercase; text-decoration: underline; display: inline-block; margin-bottom: 5px; }
-        .vent-subtext { margin-bottom: 20px; display: block; text-transform: lowercase; }
+        .caps-header { 
+            text-transform: uppercase; 
+            text-decoration: underline; 
+            display: inline-block; 
+            margin-bottom: 5px; 
+        }
+        
+        .vent-subtext { 
+            margin-bottom: 20px; 
+            display: block; 
+            text-transform: lowercase; 
+        }
 
-        .mag-link { color: black; text-decoration: underline; display: block; margin-bottom: 15px; text-transform: lowercase; }
+        .mag-link { 
+            color: black; 
+            text-decoration: underline; 
+            display: block; 
+            margin-bottom: 15px; 
+            text-transform: lowercase; 
+        }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid black; padding: 10px; text-align: left; font-weight: normal; text-transform: lowercase; }
-
-        .back-btn { display: block; margin-top: 50px; text-decoration: none; font-size: 14px;
+        table { 
+            width: 100%; 
+            border-collapse: collapse;
