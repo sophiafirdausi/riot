@@ -4,33 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>riot</title>
-    <script>
-        function showPage(pageId) {
-            var pages = document.querySelectorAll('.page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = 'none';
-                pages[i].classList.remove('active');
-            }
-            var target = document.getElementById(pageId);
-            if (target) {
-                target.style.display = 'block';
-                target.classList.add('active');
-            }
-            window.scrollTo(0, 0);
-        }
-    </script>
     <style>
         body {
             font-family: "Courier New", Courier, monospace;
-            background-color: #fffde7; 
+            background-color: #fffde7; /* Warm cream/yellow */
             color: #000000;
             margin: 40px;
             font-size: 16px; 
             line-height: 1.2;
         }
 
+        /* Essential for navigation */
         .page { display: none; }
-        #home { display: block; } 
+        .active { display: block !important; }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -69,9 +55,9 @@
         <h1>riot</h1>
         <h2>projects</h2>
         <div class="projects-grid">
-            <button class="box" onclick="showPage('create-page')">create</button>
-            <button class="box" onclick="showPage('access-page')">access</button>
-            <button class="box" onclick="showPage('advocate-page')">advocate</button>
+            <button type="button" class="box" onclick="showPage('create-page')">create</button>
+            <button type="button" class="box" onclick="showPage('access-page')">access</button>
+            <button type="button" class="box" onclick="showPage('advocate-page')">advocate</button>
         </div>
     </div>
 
@@ -80,9 +66,9 @@
         <a href="https://riot-productions.com/" target="_blank" class="mag-link">riot magazine</a>
         
         <div class="projects-grid">
-            <button class="box" onclick="showPage('vent-page')">A_VENT_SPACE</button>
+            <button type="button" class="box" onclick="showPage('vent-page')">A_VENT_SPACE</button>
         </div>
-        <button class="back-btn" onclick="showPage('home')">← back</button>
+        <button type="button" class="back-btn" onclick="showPage('home')">← back</button>
     </div>
 
     <div id="access-page" class="page">
@@ -91,13 +77,13 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8jdPYEERwqriVeqXE6kc8GyuHVNVJze4cl3pKHMfva3jWw/viewform?usp=sharing&ouid=109260034631473801616" target="_blank" class="mag-link">get_media_passes</a>
             <div class="underlined-text">jobs</div>
         </div>
-        <button class="back-btn" onclick="showPage('home')">← back</button>
+        <button type="button" class="back-btn" onclick="showPage('home')">← back</button>
     </div>
 
     <div id="advocate-page" class="page">
         <div class="underlined-text">blog</div>
         <div class="underlined-text">research</div>
-        <button class="back-btn" onclick="showPage('home')">← back</button>
+        <button type="button" class="back-btn" onclick="showPage('home')">← back</button>
     </div>
 
     <div id="vent-page" class="page">
@@ -105,6 +91,42 @@
         <div class="vent-subtext">art shows all mediums</div>
         
         <table>
-            <tr>
-                <th>name</th>
-                <th>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>date</th>
+                    <th>location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        <button type="button" class="back-btn" onclick="showPage('create-page')">← back</button>
+    </div>
+
+    <script>
+        // Use this function to switch between pages
+        function showPage(pageId) {
+            // Find all elements with the class 'page'
+            var pages = document.querySelectorAll('.page');
+            
+            // Hide all pages
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
+
+            // Show the page we want
+            var target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        // Force the Home page to show when first loading
+        window.onload = function() {
+            showPage('home');
+        };
