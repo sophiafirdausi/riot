@@ -14,8 +14,10 @@
             line-height: 1.2;
         }
 
-        /* Initial state is handled by the script at the bottom to prevent blank screens */
-        .page { width: 100%; }
+        /* Essential: Hide all pages by default */
+        .page { 
+            display: none; 
+        }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -35,7 +37,7 @@
         }
         .box:hover { background-color: #000; color: #fff; }
 
-        /* EQUAL DISTANCE: blog, synesthesia, and riot magazine all use 15px */
+        /* FIXED SPACING: Both now have exactly 15px margin-bottom */
         .underlined-text { 
             text-decoration: underline; 
             display: block; 
@@ -63,7 +65,7 @@
 </head>
 <body>
 
-    <div id="home" class="page">
+    <div id="home" class="page" style="display: block;">
         <h1>riot</h1>
         <h2>projects</h2>
         <div class="projects-grid">
@@ -124,19 +126,24 @@
     </div>
 
     <script>
-        function goTo(id) {
-            var pages = document.getElementsByClassName('page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = 'none';
+        function goTo(pageId) {
+            // 1. Select all elements with the class 'page'
+            const pages = document.querySelectorAll('.page');
+            
+            // 2. Hide every single page
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // 3. Show the requested page
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.style.display = 'block';
             }
-            document.getElementById(id).style.display = 'block';
+            
+            // 4. Scroll to the top of the screen
             window.scrollTo(0, 0);
         }
-
-        // This runs immediately when the page loads to show ONLY home
-        window.onload = function() {
-            goTo('home');
-        };
     </script>
 
 </body>
