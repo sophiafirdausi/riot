@@ -14,7 +14,11 @@
             line-height: 1.2;
         }
 
+        /* All pages hidden by default */
         .page { display: none; }
+
+        /* Forces the active page to show */
+        .active { display: block !important; }
 
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
         h2 { text-decoration: underline; display: inline-block; }
@@ -34,19 +38,18 @@
         }
         .box:hover { background-color: #000; color: #fff; }
 
-        /* Updated to match mag-link spacing */
-        .underlined-text { 
+        /* Unified spacing for all links in the create page */
+        .underlined-text, .mag-link { 
             text-decoration: underline; 
             display: block; 
             margin-bottom: 15px; 
             text-transform: lowercase; 
             cursor: pointer; 
+            color: black;
         }
 
         .caps-header { text-transform: uppercase; text-decoration: underline; display: inline-block; margin-bottom: 5px; }
         .vent-subtext { margin-bottom: 20px; display: block; text-transform: lowercase; }
-
-        .mag-link { color: black; text-decoration: underline; display: block; margin-bottom: 15px; text-transform: lowercase; }
 
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid black; padding: 10px; text-align: left; font-weight: normal; text-transform: lowercase; }
@@ -56,7 +59,7 @@
 </head>
 <body>
 
-    <div id="home" class="page" style="display: block;">
+    <div id="home" class="page active">
         <h1>riot</h1>
         <h2>projects</h2>
         <div class="projects-grid">
@@ -74,10 +77,4 @@
         <div class="projects-grid">
             <button type="button" class="box" onclick="goTo('vent-page')">A_VENT_SPACE</button>
         </div>
-        <button type="button" class="back-btn" onclick="goTo('home')">← back</button>
-    </div>
-
-    <div id="access-page" class="page">
-        <h2>access</h2>
-        <div style="margin-top: 20px;">
-            <a href="
+        <button type="button" class="back-btn" onclick="goTo('home')
