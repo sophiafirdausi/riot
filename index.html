@@ -14,13 +14,8 @@
             line-height: 1.2;
         }
 
-        /* All pages are hidden by default */
-        .page { display: none; }
-        /* Show the active page */
-        .page.active { display: block; }
-
         h1, h2 { font-size: 16px; font-weight: normal; text-transform: lowercase; margin: 0 0 35px 0; }
-        h2 { text-decoration: underline; display: inline-block; }
+        h2 { text-decoration: underline; display: inline-block; margin-top: 50px; }
 
         .projects-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 35px; }
 
@@ -43,42 +38,26 @@
         .vent-subtext { margin-bottom: 20px; display: block; text-transform: lowercase; }
 
         .mag-link { color: #000; text-decoration: underline; }
-        
-        .back-btn { margin-top: 40px; display: block; cursor: pointer; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <div id="home" class="page active">
-        <h1>riot</h1>
-        <div class="projects-grid">
-            <div class="box" onclick="showPage('research')">research</div>
-            <div class="box" onclick="showPage('sophia')">sophia firdausi</div>
-            </div>
-    </div>
+    <h1>riot</h1>
 
-    <div id="research" class="page">
+    <div id="research-section">
         <h2>research</h2>
-        <p>Your research content goes here...</p>
-        <span class="back-btn" onclick="showPage('home')">back</span>
+        <div class="projects-grid">
+            <div class="box">project one</div>
+            <div class="box">project two</div>
+        </div>
     </div>
 
-    <div id="sophia" class="page">
+    <hr style="border: 0; border-top: 1px solid #000; margin: 60px 0;">
+
+    <div id="sophia-section">
         <h2>sophia firdausi</h2>
-        <p>This is the new page for Sophia Firdausi.</p>
-        <span class="back-btn" onclick="showPage('home')">back</span>
+        <p>New content for Sophia goes here.</p>
     </div>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show the selected page
-            document.getElementById(pageId).classList.add('active');
-        }
-    </script>
 
 </body>
 </html>
